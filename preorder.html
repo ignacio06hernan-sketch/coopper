@@ -1,21 +1,48 @@
-<main class="container" style="max-width: 800px;">
-    <h1>Reserva de Ítems Exclusivos</h1>
-    <div style="display: grid; grid-template-columns: 1fr 250px; gap: 2rem;">
-        <form class="card">
-            <label>Seleccionar Ítem</label>
-            <select><option>M4A1-S Cyberflow (Limited Edition)</option></select>
-            <label>Cantidad</label>
-            <input type="number" value="1">
-            <label>Fecha de Entrega Estimada</label>
-            <input type="text" value="20 de Junio, 2024" disabled>
-            <button class="btn" style="width: 100%;">Confirmar Preventa</button>
-        </form>
-        <div class="card" style="border-color: var(--accent-purple);">
-            <h4>Resumen</h4>
-            <hr style="margin: 1rem 0; border: 0.5px solid #333;">
-            <p>Subtotal: 1,500 CR</p>
-            <p>Fee Reserva: 50 CR</p>
-            <h2 style="color: var(--accent-cyan);">1,550 CR</h2>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reserva - Coopper</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">COOPPER</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Métricas</a></li>
+            <li><a href="stock.html">Stock</a></li>
+            <li><a href="catalog.html">Catálogo</a></li>
+            <li><a href="calendar.html">Drops</a></li>
+            <li><a href="history.html">Historial</a></li>
+            <li><a href="profile.html">Ajustes</a></li>
+        </ul>
+    </nav>
+
+    <main class="container" style="max-width: 900px;">
+        <h1>Reserva de Ítems Exclusivos</h1>
+        <div style="display: grid; grid-template-columns: 1fr 300px; gap: 2rem; margin-top: 2rem;">
+            <div class="card">
+                <form>
+                    <label>Seleccionar ítem para reservar</label>
+                    <select><option>Rifle de Plasma "Void"</option></select>
+                    <label>Cantidad</label>
+                    <input type="number" min="1" max="5" value="1">
+                    <label>Fecha Estimada de Entrega</label>
+                    <input type="text" value="15 de Diciembre 2023" disabled>
+                    <div style="margin: 1rem 0;">
+                        <input type="checkbox" style="width: auto;"> Acepto los términos de preventa.
+                    </div>
+                    <button class="btn" style="width: 100%;">Confirmar Reserva</button>
+                </form>
+            </div>
+            <div class="card" style="border-color: var(--accent-purple);">
+                <h3>Resumen</h3>
+                <p style="margin-top: 1rem;">Subtotal: $450.00</p>
+                <p>Tax: $12.00</p>
+                <hr style="margin: 1rem 0; border: 0.1px solid #333;">
+                <h2 style="color: var(--accent-cyan);">$462.00</h2>
+            </div>
         </div>
-    </div>
-</main>
+    </main>
+</body>
+</html>
