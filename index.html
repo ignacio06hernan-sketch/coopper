@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title>Dashboard - Coopper</title>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">COOPPER</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Métricas</a></li>
+            <li><a href="stock.html">Stock</a></li>
+            <li><a href="catalog.html">Catálogo</a></li>
+            <li><a href="calendar.html">Drops</a></li>
+            <li><a href="history.html">Historial</a></li>
+            <li><a href="profile.html">Ajustes</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h1>Dashboard General</h1>
+        <div class="grid-3" style="margin-top: 2rem;">
+            <div class="card"><h3>Precio Promedio</h3><p style="font-size: 2rem; color: var(--accent-cyan);">$124.50</p></div>
+            <div class="card"><h3>Ítems en Venta</h3><p style="font-size: 2rem; color: var(--accent-purple);">1,204</p></div>
+            <div class="card"><h3>Ventas 24h</h3><p style="font-size: 2rem; color: #4caf50;">+84</p></div>
+        </div>
+
+        <div class="card" style="margin-top: 2rem; height: 300px; display: flex; align-items: flex-end; gap: 10px;">
+            <!-- Placeholder Gráfico -->
+            <div style="background: var(--accent-cyan); width: 10%; height: 40%;"></div>
+            <div style="background: var(--accent-purple); width: 10%; height: 60%;"></div>
+            <div style="background: var(--accent-cyan); width: 10%; height: 80%;"></div>
+            <div style="background: var(--accent-purple); width: 10%; height: 50%;"></div>
+            <div style="flex-grow: 1; text-align: center;">Tendencia de Precios (Simulado)</div>
+        </div>
+    </main>
+</body>
+</html>
