@@ -1,23 +1,47 @@
-<main class="container" style="display: grid; grid-template-columns: 250px 1fr; gap: 2rem;">
-    <aside>
-        <ul style="list-style: none;">
-            <li style="padding: 1rem; border-left: 2px solid var(--accent-cyan);">Cuenta</li>
-            <li style="padding: 1rem; color: var(--text-dim);">Privacidad</li>
-            <li style="padding: 1rem; color: var(--text-dim);">Notificaciones</li>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Configuración - Coopper</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">COOPPER</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Métricas</a></li>
+            <li><a href="stock.html">Stock</a></li>
+            <li><a href="catalog.html">Catálogo</a></li>
+            <li><a href="calendar.html">Drops</a></li>
+            <li><a href="history.html">Historial</a></li>
+            <li><a href="profile.html">Ajustes</a></li>
         </ul>
-    </aside>
-    <section class="card">
-        <h2>Ajustes de Perfil</h2>
-        <form style="margin-top: 2rem;">
-            <label>Nombre de Usuario</label>
-            <input type="text" value="CyberPunk_User77">
-            <label>Email</label>
-            <input type="email" value="user@coopper.com">
-            <div style="display: flex; align-items: center; gap: 1rem; margin: 1rem 0;">
-                <input type="checkbox" style="width: auto;"> 
-                <span>Recibir alertas de ofertas flash</span>
-            </div>
-            <button class="btn">Guardar Cambios</button>
-        </form>
-    </section>
-</main>
+    </nav>
+
+    <main class="container" style="display: grid; grid-template-columns: 280px 1fr; gap: 2rem;">
+        <aside class="card">
+            <ul style="list-style: none; line-height: 3;">
+                <li style="color: var(--accent-cyan); cursor: pointer;">● Perfil</li>
+                <li style="color: var(--text-dim); cursor: pointer;">Seguridad</li>
+                <li style="color: var(--text-dim); cursor: pointer;">Pagos</li>
+                <li style="color: var(--text-dim); cursor: pointer;">Notificaciones</li>
+            </ul>
+        </aside>
+        <section class="card">
+            <h2>Ajustes de Cuenta</h2>
+            <form style="margin-top: 2rem;">
+                <label>Nombre de Usuario</label>
+                <input type="text" value="Admin_Coopper">
+                <label>Correo Electrónico</label>
+                <input type="email" value="admin@coopper.gg">
+                <label>Método de Pago</label>
+                <select><option>Visa **** 4421</option><option>PayPal</option></select>
+                <div style="margin: 1rem 0;">
+                    <input type="checkbox" style="width: auto; margin-right: 10px;"> Activar notificaciones de preventa
+                </div>
+                <button class="btn">Actualizar Perfil</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
