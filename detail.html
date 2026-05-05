@@ -5,22 +5,53 @@
     <title>Detalle de Ítem - Coopper</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<main class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; min-height: 80vh;">
-    <div class="card" style="padding: 0;">
-        <img src="https://via.placeholder.com/500x500/161616/00f2ff?text=Neon+Blade" alt="Item" style="width: 100%; border-radius: 12px;">
-    </div>
-    <div>
-        <span class="badge legendary">Legendario</span>
-        <h1 style="font-size: 3.5rem;">Neon Blade X</h1>
-        <p style="color: var(--text-dim); margin-bottom: 2rem;">Forjada en las profundidades de Neo-Tokyo, esta hoja emite una frecuencia vibratoria capaz de cortar el acero carbono.</p>
-        <div class="card" style="margin-bottom: 2rem;">
-            <h4>Atributos Técnicos</h4>
-            <ul style="list-style: none; padding: 0;">
-                <li>⚔️ Daño: 95</li>
-                <li>⚡ Velocidad: +15%</li>
-            </ul>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">COOPPER</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Métricas</a></li>
+            <li><a href="stock.html">Stock</a></li>
+            <li><a href="catalog.html">Catálogo</a></li>
+            <li><a href="calendar.html">Drops</a></li>
+            <li><a href="history.html">Historial</a></li>
+            <li><a href="profile.html">Ajustes</a></li>
+        </ul>
+    </nav>
+
+    <main class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 4rem; align-items: center;">
+        <!-- Imagen Principal con efecto de resplandor -->
+        <div style="position: relative;">
+            <div style="position: absolute; width: 100%; height: 100%; background: var(--accent-purple); filter: blur(100px); opacity: 0.2; z-index: -1;"></div>
+            <img src="https://images.unsplash.com/photo-1635323239353-8f0a9960244c?q=80&w=800&auto=format&fit=crop" 
+                 alt="Legendary Item" 
+                 style="width: 100%; border-radius: 20px; border: 1px solid var(--accent-purple); box-shadow: 0 0 30px rgba(112, 0, 255, 0.3);">
         </div>
-        <button class="btn" style="width: 100%; margin-bottom: 1rem;">Comprar Ahora - 2,500 CR</button>
-        <button class="btn btn-outline" style="width: 100%;">Añadir a Deseados</button>
-    </div>
-</main>
+
+        <div>
+            <span class="badge legendary" style="letter-spacing: 2px; padding: 5px 15px;">Colección Inmortal</span>
+            <h1 style="font-size: 4rem; line-height: 1; margin: 1.5rem 0; background: linear-gradient(to right, #00f2ff, #7000ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                VOID WALKER
+            </h1>
+            <p style="color: var(--text-dim); font-size: 1.2rem; margin-bottom: 2rem;">
+                Esta armadura de fibra de carbono y circuitos de plasma permite al portador desfasarse de la realidad durante 2.5 segundos. 
+                <br><br>
+                <strong style="color: white;">Atributos Especiales:</strong>
+                <ul style="margin-top: 10px; color: var(--accent-cyan);">
+                    <li>✦ Resistencia al Daño: +40%</li>
+                    <li>✦ Sigilo Nocturno: Activo</li>
+                </ul>
+            </p>
+            
+            <div class="card" style="margin-bottom: 2rem; background: rgba(255,255,255,0.05);">
+                <span style="color: var(--text-dim);">Precio de mercado</span>
+                <h2 style="font-size: 2.5rem;">4,250 <span style="font-size: 1rem; color: var(--accent-cyan);">CREDITS</span></h2>
+            </div>
+
+            <div style="display: flex; gap: 1.5rem;">
+                <button class="btn" style="flex: 2; padding: 1.2rem; font-size: 1.1rem;">Adquirir Skin</button>
+                <button class="btn btn-outline" style="flex: 1;">★ Favorito</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
