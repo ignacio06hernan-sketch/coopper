@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Configuración - Coopper</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -18,30 +19,125 @@
         </ul>
     </nav>
 
-    <main class="container" style="display: grid; grid-template-columns: 280px 1fr; gap: 2rem;">
-        <aside class="card">
-            <ul style="list-style: none; line-height: 3;">
-                <li style="color: var(--accent-cyan); cursor: pointer;">● Perfil</li>
-                <li style="color: var(--text-dim); cursor: pointer;">Seguridad</li>
-                <li style="color: var(--text-dim); cursor: pointer;">Pagos</li>
-                <li style="color: var(--text-dim); cursor: pointer;">Notificaciones</li>
-            </ul>
+    <main class="container" style="display: grid; grid-template-columns: 250px 1fr; gap: 2rem; margin-top: 2rem;">
+        
+        
+        <aside>
+            <div class="card" style="position: sticky; top: 100px;">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 1.5rem;"><a href="#perfil" style="color: var(--accent-cyan); text-decoration: none; font-weight: bold;">👤 Perfil</a></li>
+                    <li style="margin-bottom: 1.5rem;"><a href="#pagos" style="color: var(--text-dim); text-decoration: none;">💳 Pagos</a></li>
+                    <li style="margin-bottom: 1.5rem;"><a href="#seguridad" style="color: var(--text-dim); text-decoration: none;">🔒 Seguridad</a></li>
+                    <li style="margin-bottom: 1.5rem;"><a href="#notificaciones" style="color: var(--text-dim); text-decoration: none;">🔔 Notificaciones</a></li>
+                </ul>
+            </div>
         </aside>
-        <section class="card">
-            <h2>Ajustes de Cuenta</h2>
-            <form style="margin-top: 2rem;">
-                <label>Nombre de Usuario</label>
-                <input type="text" value="Admin_Coopper">
-                <label>Correo Electrónico</label>
-                <input type="email" value="admin@coopper.gg">
-                <label>Método de Pago</label>
-                <select><option>Visa **** 4421</option><option>PayPal</option></select>
-                <div style="margin: 1rem 0;">
-                    <input type="checkbox" style="width: auto; margin-right: 10px;"> Activar notificaciones de preventa
+
+        
+        <div style="display: flex; flex-direction: column; gap: 2rem;">
+            
+            
+            <section id="perfil" class="card">
+                <h2 style="color: var(--accent-cyan); border-bottom: 1px solid var(--accent-cyan); padding-bottom: 10px;">Información del Perfil</h2>
+                <form style="margin-top: 1.5rem;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div>
+                            <label>Nombre de Usuario</label>
+                            <input type="text" value="CyberHunter_99">
+                        </div>
+                        <div>
+                            <label>Correo Electrónico</label>
+                            <input type="email" value="hunter@coopper.gg">
+                        </div>
+                    </div>
+                    <label>Bio del Jugador</label>
+                    <textarea rows="3" placeholder="Cuéntale al mundo sobre tu inventario..."></textarea>
+                    <button class="btn">Guardar Cambios</button>
+                </form>
+            </section>
+
+            
+            <section id="pagos" class="card">
+                <h2 style="color: var(--accent-purple); border-bottom: 1px solid var(--accent-purple); padding-bottom: 10px;">Métodos de Pago</h2>
+                <div style="margin-top: 1.5rem;">
+                    <div class="card" style="background: linear-gradient(135deg, #1a1a1a, #000); border: 1px solid #333; margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <p style="font-family: 'Rajdhani'; letter-spacing: 2px;">VISA •••• 4421</p>
+                            <p style="font-size: 0.8rem; color: var(--text-dim);">Expira: 12/26</p>
+                        </div>
+                        <span class="badge rare">Principal</span>
+                    </div>
+                    <button class="btn btn-outline" style="width: 100%;">+ Añadir nueva tarjeta o Crypto Wallet</button>
+                    <div style="margin-top: 1.5rem;">
+                        <p style="font-size: 0.9rem;">Saldo en Coopper Credits: <strong style="color: var(--accent-cyan);">2,500 CR</strong></p>
+                    </div>
                 </div>
-                <button class="btn">Actualizar Perfil</button>
-            </form>
-        </section>
+            </section>
+
+            
+            <section id="seguridad" class="card">
+                <h2 style="color: #ff0055; border-bottom: 1px solid #ff0055; padding-bottom: 10px;">Seguridad</h2>
+                <form style="margin-top: 1.5rem;">
+                    <label>Contraseña Actual</label>
+                    <input type="password" placeholder="••••••••">
+                    <label>Nueva Contraseña</label>
+                    <input type="password" placeholder="••••••••">
+                    
+                    <div class="setting-row">
+                        <div>
+                            <p>Autenticación de Dos Pasos (2FA)</p>
+                            <p style="font-size: 0.8rem; color: var(--text-dim);">Protege tu cuenta con Google Authenticator.</p>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <button class="btn" style="margin-top: 1rem; background: #ff0055;">Actualizar Seguridad</button>
+                </form>
+            </section>
+
+            
+            <section id="notificaciones" class="card">
+                <h2 style="color: var(--accent-cyan); border-bottom: 1px solid var(--accent-cyan); padding-bottom: 10px;">Notificaciones</h2>
+                <div style="margin-top: 1rem;">
+                    <div class="setting-row">
+                        <p>Alertas de Bajada de Precio (Wishlist)</p>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-row">
+                        <p>Nuevos Drops de Eventos</p>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-row">
+                        <p>Resumen Semanal de Ventas (Email)</p>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-row" style="border: none;">
+                        <p>Mensajes directos de compradores</p>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+        </div>
     </main>
+
+    <footer style="text-align: center; padding: 4rem; color: var(--text-dim); font-size: 0.8rem;">
+        &copy; 2024 COOPPER Marketplace - Protocolo de Seguridad Encriptado
+    </footer>
+
 </body>
 </html>
