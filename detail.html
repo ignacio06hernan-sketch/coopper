@@ -18,40 +18,73 @@
         </ul>
     </nav>
 
-    <main class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 4rem; align-items: center;">
-        <!-- Imagen Principal con efecto de resplandor -->
+    <main class="container" id="item-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 4rem; align-items: center;">
+        <!-- Contenido Dinámico -->
         <div style="position: relative;">
-            <div style="position: absolute; width: 100%; height: 100%; background: var(--accent-purple); filter: blur(100px); opacity: 0.2; z-index: -1;"></div>
-            <img src="https://images.unsplash.com/photo-1635323239353-8f0a9960244c?q=80&w=800&auto=format&fit=crop" 
-                 alt="Legendary Item" 
-                 style="width: 100%; border-radius: 20px; border: 1px solid var(--accent-purple); box-shadow: 0 0 30px rgba(112, 0, 255, 0.3);">
+            <img id="item-img" src="" style="width: 100%; border-radius: 20px; border: 1px solid var(--accent-purple); box-shadow: 0 0 30px rgba(112, 0, 255, 0.3);">
         </div>
 
         <div>
-            <span class="badge legendary" style="letter-spacing: 2px; padding: 5px 15px;">Colección Inmortal</span>
-            <h1 style="font-size: 4rem; line-height: 1; margin: 1.5rem 0; background: linear-gradient(to right, #00f2ff, #7000ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                VOID WALKER
-            </h1>
-            <p style="color: var(--text-dim); font-size: 1.2rem; margin-bottom: 2rem;">
-                Esta armadura de fibra de carbono y circuitos de plasma permite al portador desfasarse de la realidad durante 2.5 segundos. 
-                <br><br>
-                <strong style="color: white;">Atributos Especiales:</strong>
-                <ul style="margin-top: 10px; color: var(--accent-cyan);">
-                    <li>✦ Resistencia al Daño: +40%</li>
-                    <li>✦ Sigilo Nocturno: Activo</li>
-                </ul>
-            </p>
+            <span id="item-badge" class="badge">Rareza</span>
+            <h1 id="item-name" style="font-size: 3.5rem; margin: 1rem 0; color: var(--accent-cyan);">Nombre del Ítem</h1>
+            <p id="item-desc" style="color: var(--text-dim); font-size: 1.1rem; margin-bottom: 2rem;">Descripción del ítem...</p>
             
-            <div class="card" style="margin-bottom: 2rem; background: rgba(255,255,255,0.05);">
-                <span style="color: var(--text-dim);">Precio de mercado</span>
-                <h2 style="font-size: 2.5rem;">4,250 <span style="font-size: 1rem; color: var(--accent-cyan);">CREDITS</span></h2>
+            <div class="card" style="margin-bottom: 2rem;">
+                <h2 id="item-price" style="font-size: 2.5rem;">0 CR</h2>
             </div>
 
-            <div style="display: flex; gap: 1.5rem;">
-                <button class="btn" style="flex: 2; padding: 1.2rem; font-size: 1.1rem;">Adquirir Skin</button>
-                <button class="btn btn-outline" style="flex: 1;">★ Favorito</button>
+            <div style="display: flex; gap: 1rem;">
+                <button class="btn" style="flex: 2;">Comprar Ahora</button>
+                <button class="btn btn-outline" style="flex: 1;">Favorito</button>
             </div>
         </div>
     </main>
+
+    <script>
+        // BASE DE DATOS DE LOS OBJETOS
+        const items = {
+            "1": {
+                name: "Cyber-Pulse Rifle",
+                badge: "Épico",
+                badgeClass: "epic",
+                desc: "Rifle de asalto automático con balas de energía cian. Ideal para combates a media distancia en entornos urbanos.",
+                price: "1,200 CR",
+                img: "pulserife.png"
+            },
+            "2": {
+                name: "Void Edge Katana",
+                badge: "Legendario",
+                badgeClass: "legendary",
+                desc: "Una hoja que corta el espacio-tiempo. Los enemigos no verán venir el golpe gracias a su recubrimiento de antimateria.",
+                price: "3,500 CR",
+                img: "katana.png"
+            },
+            "3": {
+                name: "Neural Interface",
+                badge: "Raro",
+                badgeClass: "rare",
+                desc: "Aumenta la velocidad de reacción del usuario en un 15%. Compatible con la mayoría de los sistemas operativos neurales.",
+                price: "850 CR",
+                img: "casco.png"
+            }
+        };
+
+        // LÓGICA PARA LEER LA URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const itemId = urlParams.get('id');
+
+        if (items[itemId]) {
+            const data = items[itemId];
+            document.getElementById('item-name').innerText = data.name;
+            document.getElementById('item-desc').innerText = data.desc;
+            document.getElementById('item-price').innerText = data.price;
+            document.getElementById('item-img').src = data.img;
+            document.getElementById('item-badge').innerText = data.badge;
+            document.getElementById('item-badge').className = 'badge ' + data.badgeClass;
+            document.title = data.name + " - Coopper";
+        } else {
+            document.getElementById('item-content').innerHTML = "<h1>Ítem no encontrado</h1><a href='catalog.html' class='btn'>Volver al catálogo</a>";
+        }
+    </script>
 </body>
 </html>
